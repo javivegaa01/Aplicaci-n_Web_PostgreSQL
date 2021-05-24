@@ -1,6 +1,10 @@
 {% extends "base.html" %}
-{% block tittle %}Página principal{% endblock %}
-
+{% block tittle %}Interfaz{% endblock %}
+{% block intro %}
+<div id="header">
+    <p></p>
+</div>
+{% endblock %}
 {% block contenido %}
     <form action="/postgres" method="post">
         <label>Base de datos:</label>
@@ -9,6 +13,7 @@
         <input type="text" name="u" value="{{u}}" required/>
         <label>Contraseña:</label>
         <input type="password" name="p" value="{{p}}" required/>
+        <br></br>
         <input type="submit" value="Enviar"/>
     </form>
 {% endblock %}

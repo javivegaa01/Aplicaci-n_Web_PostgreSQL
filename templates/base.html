@@ -18,19 +18,8 @@
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
-					<div id="intro">
-						<h3>Javier Vega Correa</h3>
-						<p>Aplicación para gestionar PostgreSQL</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a href="https://github.com/javivegaa01/Tarea_MSX" class="logo">Repositorio</a>
-					</header>
-
+					{% block intro %}
+					{% endblock %}
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
@@ -45,8 +34,7 @@
 				<!-- Main -->
 					<div id="main">
 						<section>
-						{% block titulo %}{% endblock %}
-
+						
 						{% block contenido %}{% endblock %}
                         </section>
 

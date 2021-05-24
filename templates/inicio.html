@@ -1,7 +1,18 @@
  
 {% extends "base.html" %}
 {% block tittle %}Página principal{% endblock %}
-
+{% block intro %}
+<div id="intro">
+    <h3>Javier Vega Correa</h3>
+    <p>Aplicación para gestionar PostgreSQL</p>
+    <ul class="actions">
+        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+    </ul>
+</div>
+<header id="header">
+    <a href="https://github.com/javivegaa01/Aplicaci-n_Web_PostgreSQL" class="logo">Repositorio</a>
+</header>
+{% endblock %}
 {% block contenido %}
 <h1>Bienvenidos</h1>
     <a href="/formulario">Parámetros de conexión</a>

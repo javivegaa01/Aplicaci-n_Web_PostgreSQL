@@ -24,7 +24,7 @@ def postgres():
         mostrar.append(nombre)
         mostrar.append(apellidos)
     conexion.close()
-    return render_template("postgres.html",mostrar=mostrar)
+    return render_template("postgres.html",mostrar=mostrar,d=d)
 
 #port=os.environ["PORT"]
 #'0.0.0.0',int(port)
