@@ -5,8 +5,26 @@ app = Flask(__name__)
 
 @app.route('/',methods=["GET"])
 def inicio():
-
     return render_template("inicio.html")
+
+@app.route('/formulario',methods=["GET"])
+def formulario():
+    return render_template("formulario.html")
+
+@app.route('/postgres',methods=["POST"])
+def postgres():
+    d=request.form.get("d")
+    u=request.form.get("u")
+    p=request.form.get("p")
+    conexion=psycopg2.connect(host="192.168.1.42",database=d,user=u,password="usuario")
+    cur = conexion.cursor()
+    cur.execute( "SELECT nombre, apellidos FROM medicos" )
+    mostrar=[]
+    for nombre, apellidos in cur.fetchall() :
+        mostrar.append(nombre)
+        mostrar.append(apellidos)
+    conexion.close()
+    return render_template("postgres.html",mostrar=mostrar)
 
 #port=os.environ["PORT"]
 #'0.0.0.0',int(port)

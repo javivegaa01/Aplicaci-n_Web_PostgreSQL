@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block tittle %}Página principal{% endblock %}
+
+{% block contenido %}
+{% for a in mostrar -%}
+    {{a}}
+{% endfor -%}
+{% endblock %}
