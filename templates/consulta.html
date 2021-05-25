@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block tittle %}{{d}}{% endblock %}
+{% block intro %}
+<div id="header">
+    <p></p>
+</div>
+{% endblock %}
+{% block contenido %}
+    {% for a in mostrar %-}
+        {{a}}    
+    {{% endfor -%}}
+{% endblock %}
