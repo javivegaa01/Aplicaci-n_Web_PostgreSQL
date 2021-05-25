@@ -6,13 +6,12 @@ u=input("Introduce el usuario: ")
 p=input("Introduce contraseña: ")
 
 conexion=psycopg2.connect(host=h,database=d,user=u,password=p)
-
-cur = conexion.cursor()
-
-cur.execute( "SELECT nombre, apellidos FROM medicos" )
-
-for nombre, apellidos in cur.fetchall() :
-    print (nombre,apellidos)
-
+if conexion == "":
+    print("No se encuentra ningún servidor")
+else:
+    cur = conexion.cursor()
+    cur.execute( "SELECT nombre, apellidos FROM medicos" )
+    for nombre, apellidos in cur.fetchall() :
+        print (nombre,apellidos)
 conexion.close()
 

@@ -18,11 +18,10 @@ def postgres():
     p=request.form.get("p")
     conexion=psycopg2.connect(host="192.168.1.42",database=d,user=u,password="usuario")
     cur = conexion.cursor()
-    cur.execute( "SELECT nombre, apellidos FROM medicos" )
-    mostrar=[]
-    for nombre, apellidos in cur.fetchall() :
-        mostrar.append(nombre)
-        mostrar.append(apellidos)
+    #cur.execute( "SELECT nombre, apellidos FROM medicos" )
+    cur.execute( "\l" )
+    for a in cur.fetchall() :
+        mostrar.append(a)
     conexion.close()
     return render_template("postgres.html",mostrar=mostrar,d=d)
 
