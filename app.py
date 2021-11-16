@@ -16,7 +16,7 @@ def postgres():
     d=request.form.get("d")
     u=request.form.get("u")
     p=request.form.get("p")
-    conexion=psycopg2.connect(host="192.168.121.187",database=d,user=u,password="usuario")
+    conexion=psycopg2.connect(host="192.168.1.114",database=d,user=u,password="usuario")
     cur = conexion.cursor()
     lista_tablas=['medicos','pacientes','horasdeconsulta','salasdeconsultas']
     lista_columnas=[]
